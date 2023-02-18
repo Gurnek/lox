@@ -1,0 +1,22 @@
+[package]
+name = "rlox"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mimalloc = { version = "*", default-features = false }
+fxhash = "0.2.1"
+
+[profile.release]
+debug=true
+
+[profile.optimized]
+inherits="release"
+debug=false
+strip=true
+panic="abort"
+codegen-units=1
+lto="fat"
+incremental=false

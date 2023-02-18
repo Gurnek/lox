@@ -1,0 +1,10 @@
+fun fib(n) {
+  var constant = 1 / sqrt(5);
+  var pos = (1 + sqrt(5)) / 2;
+  var neg = (1 - sqrt(5)) / 2;
+  return constant * (pow(pos, n) - pow(neg, n));
+}
+
+var start = clock();
+print fib(1000);
+print clock() - start;
